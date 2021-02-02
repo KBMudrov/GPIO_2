@@ -1,0 +1,20 @@
+18:30:22 **** Incremental Build of configuration Debug for project GPIO_2 ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F072xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "GPIO_2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Video\GPIO\GPIO_2\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPIO_2.elf
+ 
+arm-none-eabi-objdump -h -S  GPIO_2.elf  > "GPIO_2.list"
+arm-none-eabi-objcopy  -O binary  GPIO_2.elf  "GPIO_2.bin"
+Finished building: GPIO_2.bin
+ 
+arm-none-eabi-size   GPIO_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5372	     20	   1580	   6972	   1b3c	GPIO_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: GPIO_2.list
+ 
+
+18:30:25 Build Finished. 0 errors, 0 warnings. (took 3s.678ms)
+
